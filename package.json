@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts",
     "build": "tsc && cp -r ./src/public ./dist/public && cp -r ./src/views ./dist/views",
-    "start": "tsc && cp -r ./src/public ./dist/public && cp -r ./src/views ./dist/views && node ./dist/server.js"
+    "start": "npm install && tsc && cp -r ./src/public ./dist/public && cp -r ./src/views ./dist/views && node ./dist/server.js"
   },
   "author": "",
   "license": "ISC",
