@@ -80,8 +80,8 @@ const update = async (id: string, customer: ICustomer): Promise<ICustomer> => {
     try {
         let conn: Db = await getConnection();
         let model = toEntity(customer);
-        let retorno = await conn.collection('customers').updateOne({ _id: new ObjectId(id) }, { $set: model});
-        return findOne(retorno.upsertedId.toString());
+        await conn.collection('customers').updateOne({ _id: new ObjectId(id) }, { $set: model});
+        return findOne(id);
     } catch (err: any) {
         console.error(err);
         throw new Error(err);
