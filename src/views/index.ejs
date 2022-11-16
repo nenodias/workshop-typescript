@@ -31,6 +31,7 @@
             <td style='width:15%'><%= customer.uf %></td>
             <td style='width:20%'>
               <a href='/delete/<%= customer._id %>' onclick="return confirm('Tem certeza?');">Excluir</a>
+              <a href='/edit/<%= customer._id %>' >Editar</a>
             </td>
           </tr>
           <% })

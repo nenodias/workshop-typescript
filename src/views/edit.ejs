@@ -11,19 +11,20 @@
         <%= title %>
     </h1>
     <p>Preencha os dados abaixo para salvar o cliente.</p>
-    <form action="/new" method="POST">
+    <form action="/edit" method="POST">
+        <input type="hidden" name="_id" value="<%= doc._id  %>">
         <p>
-            <label>Nome: <input type="text" name="nome" /></label>
+            <label>Nome: <input type="text" name="nome" value="<%= doc.nome %>" /></label>
         </p>
         <p>
-            <label>Idade: <input type="number" name="idade" /></label>
+            <label>Idade: <input type="number" name="idade" value="<%= doc.idade %>" /></label>
         </p>
         <p>
             <label>UF:
                 <select name="uf">
                     <% estados.forEach(function(uf){ %>
-                        <option><%= uf  %></option>
-                        <% }) %>
+                    <option <%= doc.uf == uf? "selected":"" %>><%= uf  %></option>
+                    <% }) %>
                 </select>
             </label>
         </p>
